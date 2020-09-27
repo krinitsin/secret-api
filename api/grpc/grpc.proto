@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service Secret_api {
+     rpc Ip2Mac (Ip2Mac_Request) returns (Response) {}
+     rpc Mac2Ip (Mac2Ip_Request) returns (Response) {}
+}
+
+message Ip2Mac_Request {
+    string remote_addr = 1;
+    string password = 2;
+    string user_ip = 3;
+}
+
+message Mac2Ip_Request {
+    string remote_addr = 1;
+    string password = 2;
+    string mac = 3;
+}
+
+message Response {
+    string ip = 1;
+    string mac = 2;
+}
